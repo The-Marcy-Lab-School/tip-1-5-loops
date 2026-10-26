@@ -49,10 +49,18 @@ for digit in pin:
 
 # ==================== INVESTIGATE ====================
 # A) Trace the B loop on paper. Write masked after each line, every pass:
-#    Pass 1: digit = ___   after masked = "": ___   after masked = masked + "*": ___
-#    Pass 2: digit = ___   after masked = "": ___   after masked = masked + "*": ___
-#    Pass 3: digit = ___   after masked = "": ___   after masked = masked + "*": ___
-#    Pass 4: digit = ___   after masked = "": ___   after masked = masked + "*": ___
+#    Pass 1: digit = ___   
+#         after masked = "" --> masked = ___   
+#         after masked = masked + "*" --> masked = ___
+#    Pass 2: digit = ___   
+#         after masked = "" --> masked = ___   
+#         after masked = masked + "*" --> masked = ___
+#    Pass 3: digit = ___   
+#         after masked = "" --> masked = ___   
+#         after masked = masked + "*" --> masked = ___
+#    Pass 4: digit = ___   
+#         after masked = "" --> masked = ___   
+#         after masked = masked + "*" --> masked = ___
 #    After the loop, print shows: ___
 #    Self-check: your last line should match what B printed.
 #
