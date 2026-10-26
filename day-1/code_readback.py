@@ -7,6 +7,7 @@ code = "QM7"
 for letter in code:
     readback = ""
     readback = letter + " " + readback
+    
 print(readback)
 
 # 1) PREDICT: Write the output on paper, with a "because".

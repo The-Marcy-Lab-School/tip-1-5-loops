@@ -2,11 +2,11 @@
 
 Three days of loops. Each day uses three files, in this order:
 
-| Day | Topic | 1. Review | 2. Lesson | 3. Independent check |
-| --- | --- | --- | --- | --- |
-| 1 | `""` and `+` in a for loop | `ding_floor.py` | `pin_mask.py` | `code_readback.py` |
-| 2 | Starting at 0, and `_` | `stop_count.py` | `bike_minutes.py` | `bus_riders.py` |
-| 3 | `if` and `break` | `found_bang.py` | `area_code.py` | `clock_hour.py` |
+| Day | Topic                      | 1. Review       | 2. Lesson         | 3. Independent check |
+| --- | -------------------------- | --------------- | ----------------- | -------------------- |
+| 1   | `""` and `+` in a for loop | `ding_floor.py` | `pin_mask.py`     | `code_readback.py`   |
+| 2   | Starting at 0, and `_`     | `stop_count.py` | `bike_minutes.py` | `bus_riders.py`      |
+| 3   | `if` and `break`           | `found_bang.py` | `area_code.py`    | `clock_hour.py`      |
 
 ## The files
 
