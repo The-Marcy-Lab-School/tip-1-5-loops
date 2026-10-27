@@ -7,9 +7,10 @@
 # ==================== PREDICT ====================
 # Fill in EVERY "Prediction:" below before you run anything.
 
-pin = "4821"
+# Goal is to create a "mask" of "*" characters for our pin that is the same 
+# length as the pin: "4821" --> "****"
 
-# Data types of these values: pin, "", digit
+pin = "4821"
 
 masked = ""
 for digit in pin:
@@ -104,25 +105,3 @@ for digit in pin:
 #    Run it to check your trace.
 #
 # Help: if exercise 3 surprises you and one more look doesn't explain it, ask.
-
-# ==================== MAKE ====================
-# Sign heading: a building notice needs its heading spaced out,
-# with an underline that lines up under it.
-# 1. Use heading = "NOTICE" (below).
-# 2. Build `spaced` with a loop: each letter followed by one space.
-#    It must NOT start with a space.
-# 3. Build `underline` with a loop: two = for each letter.
-# 4. Each result starts from "", set once before its loop.
-#    Print each one only after its loop finishes (exactly two lines).
-# 5. It must run without crashing.
-#
-# Desired output:
-#   N O T I C E
-#   ============
-#
-# Tip: to see only your Make output, comment out the code above
-# (select it, then Ctrl+/ or Cmd+/).
-#
-# CHECKPOINT: show an instructor your running Make program.
-
-heading = "NOTICE"

@@ -2,18 +2,18 @@
 
 ## The big ideas (come back to this table)
 
-| \# | Idea | Try it in the REPL |
-| ----- | ----- | ----- |
-| 1 | Where a line sits decides how often it runs. A line inside the body runs once per item; a line outside runs once, either before the loop starts or after it ends. | \>\>\> for letter in "Ana": ...     print("inside") ... \>\>\> print("after") |
-| 2 | A result builds across passes only if its starting value is set once, before the loop, and each pass updates it from its current value. | \>\>\> for letter in "Ana": ...     count \= 0 ...     count \= count \+ 1 ... \>\>\> print(count) |
-| 3 | Empty text is a real starting value that adds nothing when joined. A space looks empty but is a character. | \>\>\> "" \+ "\*" \>\>\> " " \+ "\*" |
-| 4 | Joining is order-sensitive: whatever is on the left comes first. Adding each item to the end keeps the original order; adding it to the front reverses it. | \>\>\> "\*" \+ "48" \>\>\> "48" \+ "\*" |
+| \#  | Idea                                                                                                                                                              | Try it in the REPL                                                                         |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 1   | Where a line sits decides how often it runs. A line inside the body runs once per item; a line outside runs once, either before the loop starts or after it ends. | \>\>\> for letter in "Ana": ... print("inside") ... \>\>\> print("after")                  |
+| 2   | A result builds across passes only if its starting value is set once, before the loop, and each pass updates it from its current value.                           | \>\>\> for letter in "Ana": ... count \= 0 ... count \= count \+ 1 ... \>\>\> print(count) |
+| 3   | Empty text is a real starting value that adds nothing when joined. A space looks empty but is a character.                                                        | \>\>\> "" \+ "\*" \>\>\> " " \+ "\*"                                                       |
+| 4   | Joining is order-sensitive: whatever is on the left comes first. Adding each item to the end keeps the original order; adding it to the front reverses it.        | \>\>\> "\*" \+ "48" \>\>\> "48" \+ "\*"                                                    |
 
 ## Habits for today
 
 **Coding habit:** Set the starting value once, before the loop. Update it inside the loop from its current value. Use the finished result after the loop. Choose the join order on purpose:
 
-- `result = result + item` keeps the original order.  
+- `result = result + item` keeps the original order.
 - `result = item + result` reverses it.
 
 **Working habit: Debugging with a plan.**
@@ -24,7 +24,7 @@
 
 Two ideas from earlier lessons:
 
-- A loop runs its body once for each item. The loop's name takes each item's value in turn, and the body doesn't have to use it.  
+- A loop runs its body once for each item. The loop's name takes each item's value in turn, and the body doesn't have to use it.
 - An assignment works out the right side using the name's current value, then replaces that value.
 
 Open `day-1/ding_floor.py`:
@@ -46,7 +46,7 @@ Floor 4
 
 Answer each question in the file, right under it. Predict before you run.
 
-1. Change `"48"` to `"4821"`. How many times will `Ding` print? Does the body care which digits are in the text?  
+1. Change `"48"` to `"4821"`. How many times will `Ding` print? Does the body care which digits are in the text?
 2. Add `floor = floor + 1` two more times before the `print`. What will it print? Why isn't `floor = floor + 1` a contradiction?
 
 ---
@@ -55,15 +55,15 @@ Answer each question in the file, right under it. Predict before you run.
 
 Open `day-1/pin_mask.py`. It builds a masked PIN three ways: A, B and C. **Don't run it yet.**
 
-1. Fill in the data types comment and every `# Prediction:` line.  
-2. Run `python3 day-1/pin_mask.py`.  
+1. Fill in the data types comment and every `# Prediction:` line.
+2. Run `python3 day-1/pin_mask.py`.
 3. Fill in each `# Actual:` and `# Explanation:`. Use the big ideas table.
 
 Answer these under **Part 1 questions** at the bottom of `pin_mask.py`:
 
-1. What are the data types of `pin`, `""`, and `digit`?  
-2. No line mentions the number 4\. Where did A's four stars come from?  
-3. The B loop also runs four times. Why only one star?  
+1. What are the data types of `pin`, `""`, and `digit`?
+2. No line mentions the number 4\. Where did A's four stars come from?
+3. The B loop also runs four times. Why only one star?
 4. Why does C print four lines? Which one is the finished result?
 
 **Swap with a partner.** Read each other's answers and compare.
@@ -130,11 +130,10 @@ Change `masked + digit` to `digit + masked`. Predict the output, then trace `mas
 
 **Requirements**
 
-1. Use `heading = "NOTICE"` (already in the file).  
-2. Build `spaced` with a loop: each letter followed by one space. It must not start with a space.  
-3. Build `underline` with a loop: two `=` for each letter.  
-4. Each result starts from `""`, set once before its loop. Print each one only after its loop finishes (exactly two lines).  
-5. The program must run without crashing.
+1. Use `heading = "NOTICE"` (already in the file).
+2. Build a `spaced_heading` variable with a loop: each letter followed by one space. It must not start with a space.
+3. Build an `underline` variable with a loop: two `=` characters for each letter.
+4. Print each variable once they have been fully created.
 
 **Check your output.**
 
@@ -165,19 +164,19 @@ Use one new tool, `len()`, which gives back how many characters a piece of text 
 
 ## The big ideas (come back to this table)
 
-| \# | Idea | Try it in the REPL |
-| ----- | ----- | ----- |
-| 1 | The whole body runs top to bottom on each pass before the next pass begins. | \>\>\> for letter in "Bo": ...     print("first", letter) ...     print("second", letter) ... |
-| 2 | Inside the body, a name holds a partway value. The finished result exists only after the last pass. | \>\>\> count \= 0 \>\>\> for letter in "Ana": ...     count \= count \+ 1 ...     print(count) ... \>\>\> print("done:", count) |
-| 3 | The order of lines in the body decides which value each line sees. A line before the update sees the previous pass's value; a line after it sees this pass's. | \>\>\> count \= 0 \>\>\> for letter in "Ana": ...     print(count) ...     count \= count \+ 1 ... \>\>\> print("done:", count) |
-| 4 | Names changed in a loop, including the loop's own name, keep their last value after the loop ends. | \>\>\> for letter in "Queens": ...     last \= letter ... \>\>\> print(last, letter) |
-| 5 | A name can signal intent: a throwaway name says the value isn't used, but Python still assigns each item to it like any other name. | \>\>\> for \_ in "AB": ...     print("Ding") ... \>\>\> print(\_) |
+| \#  | Idea                                                                                                                                                          | Try it in the REPL                                                                                                      |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 1   | The whole body runs top to bottom on each pass before the next pass begins.                                                                                   | \>\>\> for letter in "Bo": ... print("first", letter) ... print("second", letter) ...                                   |
+| 2   | Inside the body, a name holds a partway value. The finished result exists only after the last pass.                                                           | \>\>\> count \= 0 \>\>\> for letter in "Ana": ... count \= count \+ 1 ... print(count) ... \>\>\> print("done:", count) |
+| 3   | The order of lines in the body decides which value each line sees. A line before the update sees the previous pass's value; a line after it sees this pass's. | \>\>\> count \= 0 \>\>\> for letter in "Ana": ... print(count) ... count \= count \+ 1 ... \>\>\> print("done:", count) |
+| 4   | Names changed in a loop, including the loop's own name, keep their last value after the loop ends.                                                            | \>\>\> for letter in "Queens": ... last \= letter ... \>\>\> print(last, letter)                                        |
+| 5   | A name can signal intent: a throwaway name says the value isn't used, but Python still assigns each item to it like any other name.                           | \>\>\> for \_ in "AB": ... print("Ding") ... \>\>\> print(\_)                                                           |
 
 ## Habits for today
 
 **Coding habit:** Name the loop variable for what it holds; when the body never uses it, name it `_`. Place a checkpoint print on purpose:
 
-- **After** the update to see this pass's value.  
+- **After** the update to see this pass's value.
 - **Before** the update to see the previous pass's.
 
 **Working habit: Where was it last right?**
@@ -190,7 +189,7 @@ Use one new tool, `len()`, which gives back how many characters a piece of text 
 
 Two ideas from Day 1:
 
-- Where a line sits decides how often it runs. A line inside the body runs once per item; a line outside runs once, either before the loop starts or after it ends.  
+- Where a line sits decides how often it runs. A line inside the body runs once per item; a line outside runs once, either before the loop starts or after it ends.
 - A result builds across passes only if its starting value is set once, before the loop, and each pass updates it from its current value.
 
 Open `day-2/stop_count.py`:
@@ -208,7 +207,7 @@ Stops: 3
 
 Answer each question in the file, right under it. Predict before you run.
 
-1. Indent the `print` so it's inside the body. How many lines will print, and why?  
+1. Indent the `print` so it's inside the body. How many lines will print, and why?
 2. Put the `print` back after the loop. Then move `stops = 0` into the body, as its first line. What prints? Why does the count stop growing?
 
 ---
@@ -217,15 +216,15 @@ Answer each question in the file, right under it. Predict before you run.
 
 Open `day-2/bike_minutes.py`. It adds up three 12-minute bike rides two ways: A and B. **Don't run it yet.**
 
-1. Fill in the data types comment and every `# Prediction:` line.  
-2. Run `python3 day-2/bike_minutes.py`.  
+1. Fill in the data types comment and every `# Prediction:` line.
+2. Run `python3 day-2/bike_minutes.py`.
 3. Fill in each `# Actual:` and `# Explanation:`. Use the big ideas table.
 
 Answer these under **Part 1 questions** at the bottom of `bike_minutes.py`:
 
-1. What are the data types of `minutes` and `ride`?  
-2. Why are A's three "so far" lines different from each other?  
-3. B has the same two body lines as A. Why does it start at 0?  
+1. What are the data types of `minutes` and `ride`?
+2. Why are A's three "so far" lines different from each other?
+3. B has the same two body lines as A. Why does it start at 0?
 4. Both totals are 36\. Why does A's last "so far" match its total when B's doesn't?
 
 **Swap with a partner.** Read each other's answers and compare.
@@ -297,10 +296,10 @@ Add `print("B starts at:", minutes)` as the first line of B's body. Predict, the
 
 **Requirements**
 
-1. Use `_` as the loop name; the body doesn't need it.  
-2. Start an `episode` counter and a `minutes` total at 0, before the loop.  
-3. Each pass prints two lines: the minute the episode starts, then the minute it ends. Both must be correct.  
-4. After the loop, print one line with the number of episodes and the total minutes.  
+1. Use `_` as the loop name; the body doesn't need it.
+2. Start an `episode` counter and a `minutes` total at 0, before the loop.
+3. Each pass prints two lines: the minute the episode starts, then the minute it ends. Both must be correct.
+4. After the loop, print one line with the number of episodes and the total minutes.
 5. The program must run without crashing.
 
 **Check your output.**
@@ -337,23 +336,23 @@ Use one new tool, `while`, which repeats its body for as long as a condition is 
 
 ## The big ideas (come back to this table)
 
-| \# | Idea | Try it in the REPL |
-| ----- | ----- | ----- |
-| 1 | An early exit stops the whole loop the moment it runs. The rest of that pass is skipped, no more passes start, and the program carries on with the first line after the loop. | \>\>\> for letter in "Bob": ...     print("before", letter) ...     break ...     print("after", letter) ... \>\>\> print("loop over") |
-| 2 | A stop placed under a decision runs only on the pass where the condition is true; until then, every pass runs normally. | \>\>\> for letter in "Bo\!": ...     if letter \== "\!": ...         break ...     print(letter) ... |
-| 3 | Whether the stopping pass's work counts depends on whether that work comes before or after the check. | \>\>\> kept \= "" \>\>\> for letter in "Bo\!": ...     kept \= kept \+ letter ...     if letter \== "\!": ...         break ... \>\>\> print(kept) Then try it again with the check above the update. |
-| 4 | After an early exit, names hold the values from the passes that ran, and the loop's name holds the item it stopped on. | \>\>\> for ch in "718-555": ...     if ch \== "-": ...         break ... \>\>\> print(ch) |
+| \#  | Idea                                                                                                                                                                          | Try it in the REPL                                                                                                                                                                    |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | An early exit stops the whole loop the moment it runs. The rest of that pass is skipped, no more passes start, and the program carries on with the first line after the loop. | \>\>\> for letter in "Bob": ... print("before", letter) ... break ... print("after", letter) ... \>\>\> print("loop over")                                                            |
+| 2   | A stop placed under a decision runs only on the pass where the condition is true; until then, every pass runs normally.                                                       | \>\>\> for letter in "Bo\!": ... if letter \== "\!": ... break ... print(letter) ...                                                                                                  |
+| 3   | Whether the stopping pass's work counts depends on whether that work comes before or after the check.                                                                         | \>\>\> kept \= "" \>\>\> for letter in "Bo\!": ... kept \= kept \+ letter ... if letter \== "\!": ... break ... \>\>\> print(kept) Then try it again with the check above the update. |
+| 4   | After an early exit, names hold the values from the passes that ran, and the loop's name holds the item it stopped on.                                                        | \>\>\> for ch in "718-555": ... if ch \== "-": ... break ... \>\>\> print(ch)                                                                                                         |
 
 ## Habits for today
 
 **Coding habit:** Put the check where you mean it.
 
-- Check **before** the update when the stopping item shouldn't count.  
+- Check **before** the update when the stopping item shouldn't count.
 - Check **after** the update when it should.
 
 **Working habit: If I try this, I expect … / That tells me …**
 
-- Before each run, say: "If I try this, I expect …"  
+- Before each run, say: "If I try this, I expect …"
 - After each run, finish: "That tells me …"
 
 ---
@@ -362,7 +361,7 @@ Use one new tool, `while`, which repeats its body for as long as a condition is 
 
 Two ideas from earlier lessons:
 
-- The whole body runs top to bottom on each pass, and the order of its lines decides which value each line sees (Day 2).  
+- The whole body runs top to bottom on each pass, and the order of its lines decides which value each line sees (Day 2).
 - A decision lets a program skip code: a block runs only if its condition is true at the moment Python reaches it (Conditionals 1).
 
 Open `day-3/found_bang.py`:
@@ -385,7 +384,7 @@ found !
 
 Answer each question in the file, right under it. Predict before you run.
 
-1. Move `print(letter, stops)` above `stops = stops + 1`. What prints? Why does every number drop by one?  
+1. Move `print(letter, stops)` above `stops = stops + 1`. What prints? Why does every number drop by one?
 2. Put the print back. Change `"Bo!"` to `"Bo"`. What prints? Why does `found !` never print?
 
 ---
@@ -394,15 +393,15 @@ Answer each question in the file, right under it. Predict before you run.
 
 Open `day-3/area_code.py`. It pulls the area code out of a phone number two ways: A and B. **Don't run it yet.**
 
-1. Fill in the data types comment and every `# Prediction:` line.  
-2. Run `python3 day-3/area_code.py`.  
+1. Fill in the data types comment and every `# Prediction:` line.
+2. Run `python3 day-3/area_code.py`.
 3. Fill in each `# Actual:` and `# Explanation:`. Use the big ideas table.
 
 Answer these under **Part 1 questions** at the bottom of `area_code.py`:
 
-1. What are the data types of `phone`, `area`, and `ch`?  
-2. The phone number has more digits after the dash. Why were they never added in A?  
-3. B has the same lines as A. Why is the dash included?  
+1. What are the data types of `phone`, `area`, and `ch`?
+2. The phone number has more digits after the dash. Why were they never added in A?
+3. B has the same lines as A. Why is the dash included?
 4. The program kept going after each `break`. How can you tell?
 
 **Swap with a partner.** Read each other's answers and compare.
@@ -474,11 +473,11 @@ Add `print("Stopped at:", ch)` after the B loop. Predict, then trace each pass: 
 
 **Requirements**
 
-1. Use `full_name = "Priya Shah"` (already in the file).  
-2. Build `first` with a loop that stops at the first space. The space must not be part of `first`.  
-3. Count the letters in `first` with a counter that starts at 0 before the loop.  
-4. After the loop, print one line with the first name and its letter count.  
-5. Rerun with `full_name = "Sam"`. It has no space, so the loop never stops early, and it must still print the right name and count.  
+1. Use `full_name = "Priya Shah"` (already in the file).
+2. Build `first` with a loop that stops at the first space. The space must not be part of `first`.
+3. Count the letters in `first` with a counter that starts at 0 before the loop.
+4. After the loop, print one line with the first name and its letter count.
+5. Rerun with `full_name = "Sam"`. It has no space, so the loop never stops early, and it must still print the right name and count.
 6. The program must run without crashing.
 
 **Check your output.** One run with `"Priya Shah"`, one with `"Sam"`:
